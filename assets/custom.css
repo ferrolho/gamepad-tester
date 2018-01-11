@@ -1,0 +1,7 @@
+#img-controller-overlays {
+    position: relative;
+}
+
+#img-controller-overlays > img {
+    position: absolute;
+}
