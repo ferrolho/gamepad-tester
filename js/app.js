@@ -2,6 +2,23 @@
 
 const gamepad = new Gamepad()
 
+/*
+ * Connection / Disconnection
+ */
+
+gamepad.on('connect', e => {
+  console.log(`Controller ${e.index} connected!`)
+  console.log(navigator.getGamepads()[e.index].id.toLowerCase().indexOf('xbox') !== -1) // it is an xbox controller
+})
+
+gamepad.on('disconnect', e => {
+  console.log(`Controller ${e.index} disconnected!`)
+})
+
+/*
+ * Button presses / releases
+ */
+
 const gamepadButtons = [
   'button_1', 'button_2', 'button_3', 'button_4',
   'shoulder_top_left', 'shoulder_top_right',
@@ -19,6 +36,10 @@ for (const button of gamepadButtons) {
   })
 }
 
+/*
+ * Stick button presses / releases
+ */
+
 const gamepadStickButtons = [ 'stick_button_left', 'stick_button_right' ]
 
 for (const button of gamepadStickButtons) {
@@ -33,19 +54,28 @@ for (const button of gamepadStickButtons) {
   })
 }
 
-gamepad.on('connect', e => {
-  console.log(`Controller ${e.index} connected!`)
-  console.log(navigator.getGamepads()[e.index].id.toLowerCase().indexOf('xbox') !== -1) // it is an xbox controller
-})
+/*
+ * Stick movements
+ */
 
-gamepad.on('disconnect', e => {
-  console.log(`Controller ${e.index} disconnected!`)
-})
+const perspective = 500
+const multiplierTranslation = 20
+const multiplierRotation = 30
 
-gamepad.on('hold', 'stick_button_left', e => {
-  console.log(`stick_button_left has a value of ${e.value}!`)
-})
+const gamepadSticks = [ 'stick_axis_left', 'stick_axis_right' ]
 
-gamepad.on('hold', 'stick_axis_left', e => {
-  console.log(`stick_axis_left has a value of ${e.value}!`)
-})
+for (const stick of gamepadSticks) {
+  gamepad.on('hold', stick, e => {
+    $(`#${stick}`).css('transform', `perspective(${perspective}px) \
+        translateX(${e.value[0] * multiplierTranslation}px) translateY(${e.value[1] * multiplierTranslation}px) \
+        rotateX(${e.value[1] * -multiplierRotation}deg) rotateY(${e.value[0] * multiplierRotation}deg)`)
+    $(`#stick_button_${stick.split('_').pop()}`).css('transform', `perspective(${perspective}px) \
+        translateX(${e.value[0] * multiplierTranslation}px) translateY(${e.value[1] * multiplierTranslation}px) \
+        rotateX(${e.value[1] * -multiplierRotation}deg) rotateY(${e.value[0] * multiplierRotation}deg)`)
+  })
+
+  gamepad.on('release', stick, e => {
+    $(`#${stick}`).css('transform', 'none')
+    $(`#stick_button_${stick.split('_').pop()}`).css('transform', 'none')
+  })
+}

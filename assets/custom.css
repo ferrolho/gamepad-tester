@@ -1,7 +1,17 @@
 #img-controller-overlays {
-    position: relative;
+  position: relative;
 }
 
 #img-controller-overlays > img {
-    position: absolute;
+  position: absolute;
+}
+
+#stick_axis_left,
+#stick_button_left {
+  transform-origin: 32% 32%;
+}
+
+#stick_axis_right,
+#stick_button_right {
+  transform-origin: 59% 50%;
 }
