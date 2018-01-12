@@ -66,12 +66,12 @@ const gamepadSticks = [ 'stick_axis_left', 'stick_axis_right' ]
 
 for (const stick of gamepadSticks) {
   gamepad.on('hold', stick, e => {
-    $(`#${stick}`).css('transform', `perspective(${perspective}px) \
-        translateX(${e.value[0] * multiplierTranslation}px) translateY(${e.value[1] * multiplierTranslation}px) \
-        rotateX(${e.value[1] * -multiplierRotation}deg) rotateY(${e.value[0] * multiplierRotation}deg)`)
-    $(`#stick_button_${stick.split('_').pop()}`).css('transform', `perspective(${perspective}px) \
-        translateX(${e.value[0] * multiplierTranslation}px) translateY(${e.value[1] * multiplierTranslation}px) \
-        rotateX(${e.value[1] * -multiplierRotation}deg) rotateY(${e.value[0] * multiplierRotation}deg)`)
+    const transform = `perspective(${perspective}px) \
+        translateX(${e.value[0] * multiplierTranslation}px) rotateX(${e.value[1] * -multiplierRotation}deg) \
+        translateY(${e.value[1] * multiplierTranslation}px) rotateY(${e.value[0] * multiplierRotation}deg)`
+
+    $(`#${stick}`).css('transform', transform)
+    $(`#stick_button_${stick.split('_').pop()}`).css('transform', transform)
   })
 
   gamepad.on('release', stick, e => {
