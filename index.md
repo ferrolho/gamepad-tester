@@ -5,19 +5,41 @@
 layout: home
 ---
 
-<link rel="stylesheet" type="text/css" href="{{ '/assets/custom.css' | absolute_url }}">
+# Embedding
 
-<span id="helper-assets-path" hidden>{{ '/assets' | absolute_url }}</span>
-<div id="img-controller-overlays">
-	<img id="stick_axis_left" src="{{ '/assets/xbox-one-s-wireless-controller-stick_axis_left.png' | absolute_url }}">
-	<img id="stick_axis_right" src="{{ '/assets/xbox-one-s-wireless-controller-stick_axis_right.png' | absolute_url }}">
-</div>
-<img id="img-controller" src="{{ '/assets/xbox-one-s-wireless-controller.png' | absolute_url }}">
+You can embed this interactive controller on your own pages.
+Just copy-paste one of the code snippets below, according to the position where you would like it to show up.
+You can change the size by changing the percentage `width="25%"` to whatever you prefer.
 
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="{{ '/gamepad.js/gamepad.js' | absolute_url }}"></script>
-<script type="text/javascript" src="{{ '/js/app.js' | absolute_url }}"></script>
+## Top left corner
+
+```html
+<script type="text/javascript" src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
+<iframe width="25%" src="{{ '/controller' | absolute_url }}" scrolling="no" style="border: initial; position: absolute; top: 0; left: 0;"></iframe>
+<script>iFrameResize()</script>
+```
+
+## Top right corner
+
+```html
+<script type="text/javascript" src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
+<iframe width="25%" src="http://127.0.0.1:4000/gamepad-tester/controller" scrolling="no" style="border: initial; position: absolute; top: 0; right: 0;"></iframe>
+<script>iFrameResize()</script>
+```
+
+## Bottom left corner
+
+```html
+<script type="text/javascript" src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
+<iframe width="25%" src="http://127.0.0.1:4000/gamepad-tester/controller" scrolling="no" style="border: initial; position: absolute; bottom: 0; left: 0;"></iframe>
+<script>iFrameResize()</script>
+```
+
+## Bottom right corner
+
+```html
+<script type="text/javascript" src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
+<iframe width="25%" src="http://127.0.0.1:4000/gamepad-tester/controller" scrolling="no" style="border: initial; position: absolute; bottom: 0; right: 0;"></iframe>
+<script>iFrameResize()</script>
+```

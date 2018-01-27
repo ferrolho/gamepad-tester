@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" type="text/css" href="{{ '/assets/custom.css' | absolute_url }}">
+
+<script type="text/javascript" src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
+<iframe width="100%" src="{{ '/controller' | absolute_url }}" scrolling="no" style="border: initial;"></iframe>
+<script>iFrameResize()</script>
+
+{{ content }}
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="{{ '/gamepad.js/gamepad.js' | absolute_url }}"></script>
+<script type="text/javascript" src="{{ '/js/app.js' | absolute_url }}"></script>

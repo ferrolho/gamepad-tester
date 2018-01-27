@@ -1,9 +1,22 @@
+body, html {
+	margin: initial;
+}
+
+#controller {
+	overflow: hidden;
+}
+
+#img-controller {
+	width: 100%;
+}
+
 #img-controller-overlays {
   position: relative;
 }
 
 #img-controller-overlays > img {
   position: absolute;
+  width: 100%;
 }
 
 #stick_axis_left,

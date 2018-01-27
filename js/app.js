@@ -59,7 +59,7 @@ for (const button of gamepadStickButtons) {
  */
 
 const perspective = 500
-const multiplierTranslation = 20
+const multiplierTranslation = $(window).width() / 40
 const multiplierRotation = 30
 
 const gamepadSticks = [ 'stick_axis_left', 'stick_axis_right' ]
