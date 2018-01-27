@@ -24,7 +24,7 @@ You can change the size by changing the percentage `width="25%"` to whatever you
 
 ```html
 <script type="text/javascript" src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
-<iframe width="25%" src="http://127.0.0.1:4000/gamepad-tester/controller" scrolling="no" style="border: initial; position: absolute; top: 0; right: 0;"></iframe>
+<iframe width="25%" src="{{ '/controller' | absolute_url }}" scrolling="no" style="border: initial; position: absolute; top: 0; right: 0;"></iframe>
 <script>iFrameResize()</script>
 ```
 
@@ -32,7 +32,7 @@ You can change the size by changing the percentage `width="25%"` to whatever you
 
 ```html
 <script type="text/javascript" src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
-<iframe width="25%" src="http://127.0.0.1:4000/gamepad-tester/controller" scrolling="no" style="border: initial; position: absolute; bottom: 0; left: 0;"></iframe>
+<iframe width="25%" src="{{ '/controller' | absolute_url }}" scrolling="no" style="border: initial; position: absolute; bottom: 0; left: 0;"></iframe>
 <script>iFrameResize()</script>
 ```
 
@@ -40,6 +40,6 @@ You can change the size by changing the percentage `width="25%"` to whatever you
 
 ```html
 <script type="text/javascript" src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
-<iframe width="25%" src="http://127.0.0.1:4000/gamepad-tester/controller" scrolling="no" style="border: initial; position: absolute; bottom: 0; right: 0;"></iframe>
+<iframe width="25%" src="{{ '/controller' | absolute_url }}" scrolling="no" style="border: initial; position: absolute; bottom: 0; right: 0;"></iframe>
 <script>iFrameResize()</script>
 ```
