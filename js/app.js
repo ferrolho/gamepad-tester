@@ -40,7 +40,7 @@ for (const button of gamepadButtons) {
  * Stick button presses / releases
  */
 
-const gamepadStickButtons = [ 'stick_button_left', 'stick_button_right' ]
+const gamepadStickButtons = ['stick_button_left', 'stick_button_right']
 
 for (const button of gamepadStickButtons) {
   gamepad.on('press', button, e => {
@@ -62,7 +62,7 @@ const perspective = 500
 const multiplierTranslation = $(window).width() / 40
 const multiplierRotation = 30
 
-const gamepadSticks = [ 'stick_axis_left', 'stick_axis_right' ]
+const gamepadSticks = ['stick_axis_left', 'stick_axis_right']
 
 for (const stick of gamepadSticks) {
   gamepad.on('hold', stick, e => {

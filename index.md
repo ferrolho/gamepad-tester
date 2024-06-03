@@ -16,31 +16,31 @@ You can change the size by changing the percentage `width="25%"` to whatever you
 ## Top left corner
 
 ```html
-<script type="text/javascript" src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
 <iframe width="25%" src="{{ '/controller' | absolute_url }}" scrolling="no" style="border: initial; position: absolute; top: 0; left: 0;"></iframe>
-<script>iFrameResize()</script>
+<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/parent@5.0.2"></script>
+<script>iframeResize({ license: 'GPLv3' })</script>
 ```
 
 ## Top right corner
 
 ```html
-<script type="text/javascript" src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
 <iframe width="25%" src="{{ '/controller' | absolute_url }}" scrolling="no" style="border: initial; position: absolute; top: 0; right: 0;"></iframe>
-<script>iFrameResize()</script>
+<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/parent@5.0.2"></script>
+<script>iframeResize({ license: 'GPLv3' })</script>
 ```
 
 ## Bottom left corner
 
 ```html
-<script type="text/javascript" src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
 <iframe width="25%" src="{{ '/controller' | absolute_url }}" scrolling="no" style="border: initial; position: absolute; bottom: 0; left: 0;"></iframe>
-<script>iFrameResize()</script>
+<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/parent@5.0.2"></script>
+<script>iframeResize({ license: 'GPLv3' })</script>
 ```
 
 ## Bottom right corner
 
 ```html
-<script type="text/javascript" src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
 <iframe width="25%" src="{{ '/controller' | absolute_url }}" scrolling="no" style="border: initial; position: absolute; bottom: 0; right: 0;"></iframe>
-<script>iFrameResize()</script>
+<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/parent@5.0.2"></script>
+<script>iframeResize({ license: 'GPLv3' })</script>
 ```
