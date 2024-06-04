@@ -79,3 +79,29 @@ for (const stick of gamepadSticks) {
     $(`#stick_button_${stick.split('_').pop()}`).css('transform', 'none')
   })
 }
+
+/*
+ * Bottom left and bottom right shoulder axes
+ */
+
+const gamepadShoulders = ['shoulder_bottom_left', 'shoulder_bottom_right']
+
+gamepad.on('hold', 'shoulder_bottom_left', e => {
+  $('#shoulder_bottom_left').css({
+    'transform-origin': '12% 10%',
+    'transform': `rotateZ(${-60 * e.value}deg)`
+  })
+})
+
+gamepad.on('hold', 'shoulder_bottom_right', e => {
+  $('#shoulder_bottom_right').css({
+    'transform-origin': '88% 10%',
+    'transform': `rotateZ(${+60 * e.value}deg)`
+  })
+})
+
+for (const shoulder of gamepadShoulders) {
+  gamepad.on('release', shoulder, e => {
+    $(`#${shoulder}`).css('transform', 'none')
+  })
+}
